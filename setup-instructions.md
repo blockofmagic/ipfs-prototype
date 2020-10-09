@@ -37,6 +37,7 @@ In the directory containing your account, copy/paste/save the following JSON int
     "config": {
         "chainID"       : 10,
         "homesteadBlock": 0,
+        "eip150Block":    0,
         "eip155Block":    0,
         "eip158Block":    0
     },
@@ -58,5 +59,5 @@ This will be block 0 of your private blockchain. If you ever wish to have others
 We will now instantiate the blockchain network and load the geth console:
 ```bash
 geth --datadir="./" init genesisblock.json
-geth --datadir="./" --networkid 23422  --rpc --rpccorsdomain="*" --rpcport="8545" --minerthreads="1" --mine --nodiscover --maxpeers=0 --unlock 0 console
+geth --datadir="./" --networkid 23422  --rpc --rpccorsdomain="*" --rpcport="8545" --minerthreads="1" --mine --nodiscover --maxpeers=0 --unlock 0 console --allow-insecure-unlock
 ```
