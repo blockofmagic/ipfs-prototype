@@ -60,4 +60,11 @@ We will now instantiate the blockchain network and load the geth console:
 ```bash
 geth --datadir="./" init genesisblock.json
 geth --datadir="./" --networkid 23422  --rpc --rpccorsdomain="*" --rpcport="8545" --minerthreads="1" --mine --nodiscover --maxpeers=0 --unlock 0 console --allow-insecure-unlock
+
+### Setup IPFS
+```bash
+$ ipfs init
+$ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:3000", "https://webui.ipfs.io", "http://127.0.0.1:5001"]'
+$ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["POST"]'
+```
 ```
