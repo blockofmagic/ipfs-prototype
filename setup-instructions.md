@@ -67,4 +67,3 @@ $ ipfs init
 $ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:3000", "https://webui.ipfs.io", "http://127.0.0.1:5001"]'
 $ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["POST"]'
 ```
-```
