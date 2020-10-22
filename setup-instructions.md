@@ -1,4 +1,5 @@
 ## Installation
+Installing and using the private ethereum blockchain will probably not be necessary. More detailed tests have yet to be carried out.
 
 ### Install Geth
 
@@ -65,6 +66,13 @@ geth --datadir="./" --networkid 23422  --http --http.corsdomain="*" --http.port=
 ### Setup IPFS
 ```bash
 $ ipfs init
+$ echo -e "/key/swarm/psk/1.0.0/\n/base16/\n$(tr -dc 'a-f0-9' < /dev/urandom | head -c64)" > .ipfs/swarm.key
 $ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://localhost:3000", "https://webui.ipfs.io", "http://127.0.0.1:5001"]'
 $ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["POST"]'
 ```
+
+### Run IPFS locally
+```bash
+export LIBP2P_FORCE_PNET=1 && ipfs daemon
+```
+Setting LIBP2P_FORCE_PNET to 1, will force IPFS to use a private network.
